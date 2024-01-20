@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Tugas CVP Cost Profit Value Diah Putri Lestari 64PLSI">
+    <meta name="keywords" content="CVP, Cost Profit Value, Diah Putri Lestari, 64PLSI">
+    <meta name="author" content="Diah Putri Lestari">
+
+    <title>Tugas Komputerisasi Akutansi</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Off Canvas Menu -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Color Switcher -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vegas.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/particles.css" >
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(-45deg, #874fd1, #d27994, #23A6D5, #23D5AB);
+      }
+
+      canvas {
+        display: block;
+        vertical-align: bottom;
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+  
+      button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #45a049;
+      }
+  
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      .result {
+        font-size: 14px;
+        color: rgb(48, 48, 142);
+      }
+
+      h1 {
+      color: #333;
+      }
+
+      .biodata {
+      text-align: left;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      color: black;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .tag-h2 {
+      margin: 10px 0 10px 0;
+    }
+    </style>
+
+  </head>
+  <body class="background-color-paralax">
+    
+    <div class="bg-wraper overlay has-vignette">
+      <div class="slider opacity-50 vegas-container" style="height: 983px;background: lightblue;"></div>
+    </div>
+    <div id="particles-js"></div>
+    <section class="countdown-timer">
+      
+      <div class="container">
+          <div class="biodata">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-xs-12">
+                <img src="assets/img/gunadarma.png" alt="Profile Picture" class="profile-img">
+              </div>
+              <div class="col-lg-10 col-md-10 col-xs-12">
+                <ul>
+                  <li>
+                    <label>Nama : Diah Putri Lestari</label> 
+                  </li>
+                  <li>
+                    <label>NPM : 91123033</label>
+                  </li>
+                  <li>
+                    <label>Kelas : 64/MMSI/PLSI</label>
+                  </li>
+                  <li>
+                    <label>Mata kuliah : Komputerisasi Akutansi</label>
+                  </li>
+                  <li>
+                    <label>Dosen : Dr.Sudarsono, SE.,MM.</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+              <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1">Margin Kontribusi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2">Rasio Margin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3">BEP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4">MOS</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab1">
+              <h2 class="tag-h2">Kalkulator Margin Kontribusi</h2>
+
+              <label for="sellingPrice">Harga Jual per Unit:</label>
+              <input type="number" class="form-control" id="sellingPrice" placeholder="Harga Jual per Unit" required>
+
+              <label for="quantity">Jumlah Unit:</label>
+              <input type="number" class="form-control" id="quantity" placeholder="Jumlah Unit" required>
+
+              <label for="totalVariableCost">Total Biaya Variabel:</label>
+              <input type="number" class="form-control" id="totalVariableCost" placeholder="Total Biaya Variabel" required>
+
+              <label for="variableCostPerUnit">Biaya Variabel per Unit:</label>
+              <input type="number" class="form-control" id="variableCostPerUnit" placeholder="Biaya Variabel per Unit" required>
+
+              <label for="contributionMarginPerUnit">Margin Kontribusi per Unit:</label>
+              <input type="number" class="form-control" id="contributionMarginPerUnit" placeholder="Margin Kontribusi per Unit" required>
+
+              <label for="totalFixedCost">Total Biaya Tetap:</label>
+              <input type="number" class="form-control" id="totalFixedCost" placeholder="Total Biaya Tetap" required>
+
+              <button onclick="calculateMargin()" class="btn btn-info btn-round" style="width: 50%;">Hitung</button>
+
+              <div id="result" class="result"></div>
+            </div>
+
+            <div class="tab-pane fade" id="tab2">
+              <h2 class="tag-h2">Kalkulator Rasio Margin</h2>
+              <label for="contributionMargin">Margin Kontribusi:</label>
+              <input type="number" class="form-control" id="contributionMargin" placeholder="Margin Kontribusi" required>
+
+              <label for="total">Total Penjualan:</label>
+              <input type="number" class="form-control" id="total" placeholder="Total Penjualan" required>
+
+              <button onclick="calculateMarginRatio()" class="btn btn-info btn-round" style="width: 50%;">Hitung</button>
+
+              <div id="resultMarginRatio" class="result"></div>
+            </div>
+
+            <div class="tab-pane fade" id="tab3">
+              <h2 class="tag-h2">Kalkulator Break-Even Point (BEP)</h2>
+              <label for="fixedCost">Biaya Tetap:</label>
+              <input type="number" class="form-control" id="fixedCost" placeholder="Biaya Tetap" required>
+
+              <label for="unitMargin">Margin per Unit:</label>
+              <input type="number" class="form-control" id="unitMargin" placeholder="Margin per Unit" required>
+
+              <label for="unitsSold">Jumlah Unit yang Dijual:</label>
+              <input type="number" class="form-control" id="unitsSold" placeholder="Jumlah Unit yang Dijual" required>
+
+              <button onclick="calculateBEP()" class="btn btn-info btn-round" style="width: 50%;">Hitung</button>
+
+              <div id="resultBEPunit" class="result"></div>
+            </div>
+
+            <div class="tab-pane fade" id="tab4">
+              <h2 class="tag-h2">Kalkulator Margin of Safety (MOS)</h2>
+              <label for="totalSales">Total Penjualan:</label>
+              <input type="number" class="form-control" id="totalSales" placeholder="Total Penjualan" required>
+
+              <label for="breakEvenPoint">Nilai Break-Even Point (BEP):</label>
+              <input type="number" class="form-control" id="breakEvenPoint" placeholder="Nilai BEP" required>
+
+              <button onclick="calculateMOS()" class="btn btn-info btn-round" style="width: 50%;">Hitung</button>
+
+              <div id="resultMOS" class="result"></div>
+            </div>
+          </div>
+          
+
+        <!-- </div> -->
+      </div>
+    </section>
+    <!-- Coundown Section End -->
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   <script src="assets/js/particles.js"></script>
+   <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/vegas.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+    
+
+    <script type="text/javascript">
+      function calculateMargin() {
+      var sellingPrice = parseFloat(document.getElementById("sellingPrice").value);
+      var quantity = parseFloat(document.getElementById("quantity").value);
+      var totalVariableCost = parseFloat(document.getElementById("totalVariableCost").value);
+      var variableCostPerUnit = parseFloat(document.getElementById("variableCostPerUnit").value);
+      var contributionMarginPerUnit = parseFloat(document.getElementById("contributionMarginPerUnit").value);
+      var totalFixedCost = parseFloat(document.getElementById("totalFixedCost").value);
+
+      var totalRevenue = sellingPrice * quantity;
+      var totalVariableCostCalculated = variableCostPerUnit * quantity;
+      var totalContributionMargin = contributionMarginPerUnit * quantity;
+      var totalCost = totalVariableCostCalculated + totalFixedCost;
+      var profitLoss = totalContributionMargin - totalFixedCost;
+
+      var resultMessage = "Laba/Rugi: ";
+
+      if (profitLoss > 0) {
+        resultMessage += "Rp " + profitLoss.toFixed(2) + " (Laba)";
+      } else if (profitLoss < 0) {
+        resultMessage += "Rp " + Math.abs(profitLoss).toFixed(2) + " (Rugi)";
+      } else {
+        resultMessage += "Tidak Ada Laba atau Rugi";
+      }
+
+      document.getElementById("result").innerText = resultMessage;
+    }
+
+    function calculateMarginRatio() {
+      var contributionMargin = parseFloat(document.getElementById("contributionMargin").value);
+      var total = parseFloat(document.getElementById("total").value);
+
+      var calculatedMarginRatio = (contributionMargin / total) * 100;
+
+      var resultMessage = "Rasio Margin: " + calculatedMarginRatio.toFixed(2) + " ";
+
+      if (calculatedMarginRatio > 30) {
+        resultMessage += "Rasio margin tinggi. Bagus!";
+      } else if (calculatedMarginRatio >= 20 && calculatedMarginRatio <= 30) {
+        resultMessage += "Rasio margin sedang. Cukup baik.";
+      } else {
+        resultMessage += "Rasio margin rendah. Perhatikan efisiensi dan pengeluaran.";
+      }
+
+        document.getElementById("resultMarginRatio").innerText = resultMessage;
+      }
+
+      function calculateBEP() {
+        var fixedCost = parseFloat(document.getElementById("fixedCost").value);
+        var unitMargin = parseFloat(document.getElementById("unitMargin").value);
+        var unitsSold = parseFloat(document.getElementById("unitsSold").value);
+
+        var breakEvenPoint = fixedCost / unitMargin;
+        var profitLoss = (unitsSold - breakEvenPoint) * unitMargin;
+
+        var resultMessage = "Break-Even Point (BEP): " + breakEvenPoint.toFixed(2) + " unit";
+
+        if (profitLoss > 0) {
+          resultMessage += "<br>Untung sebesar Rp " + profitLoss.toFixed(2);
+        } else if (profitLoss < 0) {
+          resultMessage += "<br>Rugi sebesar Rp " + Math.abs(profitLoss).toFixed(2);
+        } else {
+          resultMessage += "<br>Tidak Ada Laba atau Rugi";
+        }
+
+        document.getElementById("resultBEPunit").innerHTML = resultMessage;
+      }
+
+      function calculateMOS() {
+        var totalSales = parseFloat(document.getElementById("totalSales").value);
+        var breakEvenPoint = parseFloat(document.getElementById("breakEvenPoint").value);
+
+        var actualSales = totalSales - breakEvenPoint;
+        var calculatedMOS = (actualSales / totalSales) * 100;
+
+        var resultMessage = "Actual Sales (Setelah BEP): " + actualSales.toFixed(2) + "<br>";
+        resultMessage += "Margin of Safety: " + calculatedMOS.toFixed(2) + "%";
+
+        document.getElementById("resultMOS").innerHTML = resultMessage;
+      }
+
+      $("#example").vegas({
+          timer: false,
+          delay: 6000,
+          transitionDuration: 2000,
+          transition: "blur",
+          slides: [
+              // { src: "assets/img/slide1.jpg" }
+          ]
+      });
+    </script>
+      
+  </body>
+</html>
